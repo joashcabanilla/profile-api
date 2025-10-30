@@ -10,6 +10,7 @@ use App\Http\Requests\UpdateMemberRequest;
 
 //Actions
 use App\Actions\UpdateMemberAction;
+use App\Actions\GetMemberListAction;
 
 class MemberController extends Controller
 {
@@ -19,6 +20,15 @@ class MemberController extends Controller
         return response()->json([
             "success" => $response->success,
             "message" => $response->message,
+        ]);
+    }
+
+    public function getMemberList(GetMemberListAction $getMemberListAction){
+        $response = $getMemberListAction->handle();
+        return response()->json([
+            "success" => $response->success,
+            "message" => $response->message,
+            "data" => $response->data
         ]);
     }
 }

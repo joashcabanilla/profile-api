@@ -22,4 +22,11 @@ class AdminService {
 
        return Member::find($member->id)->update($data);
     }
+
+    /**
+     * Get member list. 
+     */
+    public function getMemberList(){
+        return Member::get();
+    }
 }
