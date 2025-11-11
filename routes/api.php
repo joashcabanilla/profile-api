@@ -8,6 +8,10 @@ use App\Http\Controllers\MemberController;
 /**
  * API ROUTES
  */
+
+//import data route
+Route::post("import", [MemberController::class, "import"]);
+
 Route::prefix("member")->group(
     function () {
         //update member info
