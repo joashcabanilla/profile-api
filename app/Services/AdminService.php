@@ -14,12 +14,12 @@ class AdminService {
         "email" => $member->email,
         "cpNumber" => $member->cpNumber,
         "tinNumber" => isset($member->tinNumber) ? $member->tinNumber : null,
+        "occupation" => isset($member->occupation) ? $member->occupation : null,
        ];
 
        if(isset($member->birthdate)){
         $data["birthdate"] = date("Y-m-d", strtotime($member->birthdate));
        }
-
        return Member::find($member->id)->update($data);
     }
 

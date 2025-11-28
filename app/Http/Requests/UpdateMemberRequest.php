@@ -29,7 +29,8 @@ class UpdateMemberRequest extends FormRequest
             "email" => ["required","email","email:rfc,dns",Rule::unique("members", "email")->ignore($this->id)],
             "cpNumber" => "required|string",
             "tinNumber" => "string",
-            "birthdate" => "date"
+            "birthdate" => "date",
+            "occupation" => "string"
         ];
     }
 

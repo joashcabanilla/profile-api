@@ -20,6 +20,7 @@ class MemberModel extends Model
         "branch",
         "cpNumber",
         "email",
+        "occupation",
         "tinNumber"
     ];
 }
